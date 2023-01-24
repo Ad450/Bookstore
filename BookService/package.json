@@ -1,12 +1,10 @@
 {
   "name": "book-service",
   "version": "1.0.0",
-  "description": "",
+  "description": "<p style=\"text-align: center\" align=\"center\">   <a href=\"https://tsed.io\" target=\"_blank\"><img src=\"https://tsed.io/tsed-og.png\" width=\"200\" alt=\"Ts.ED logo\"/></a> </p>",
   "scripts": {
-    "build": "yarn run barrels && tsc --project tsconfig.compile.json",
-    "barrels": "barrelsby --config .barrelsby.json",
-    "start": "yarn run barrels && tsnd --inspect --exit-child --cls --ignore-watch node_modules --respawn --transpile-only -r tsconfig-paths/register src/index.ts",
-    "start:prod": "cross-env NODE_ENV=production node dist/index.js"
+    "build": "tsc ",
+    "build-clean": "rm -rf dist"
   },
   "dependencies": {
     "@tsed/ajv": "^7.13.1",
@@ -58,5 +56,8 @@
     "packageManager": "yarn",
     "convention": "default",
     "architecture": "default"
-  }
+  },
+  "main": "processes.config.js",
+  "author": "Emmanuel",
+  "license": "ISC"
 }

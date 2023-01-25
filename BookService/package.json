@@ -4,7 +4,8 @@
   "description": "<p style=\"text-align: center\" align=\"center\">   <a href=\"https://tsed.io\" target=\"_blank\"><img src=\"https://tsed.io/tsed-og.png\" width=\"200\" alt=\"Ts.ED logo\"/></a> </p>",
   "scripts": {
     "build": "tsc ",
-    "build-clean": "rm -rf dist"
+    "build-clean": "rm -rf dist",
+    "start":"ts-node src/index.ts"
   },
   "dependencies": {
     "@tsed/ajv": "^7.13.1",

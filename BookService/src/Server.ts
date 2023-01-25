@@ -3,16 +3,16 @@ import { Configuration, Inject } from "@tsed/di";
 import { PlatformApplication } from "@tsed/common";
 import "@tsed/platform-express"; // /!\ keep this import
 import "@tsed/ajv";
-import * as controllers from "./controllers/rest/controllerExporter";
+import { controllers } from "./controllers/v1/controllerExporter";
+import cors from "cors";
 
 @Configuration({
   acceptMimes: ["application/json"],
-  httpPort: process.env.PORT || 8083,
+  httpPort: process.env.PORT || 3000,
   httpsPort: false, // CHANGE
   componentsScan: false,
-  mount: { "/rest": [controllers] },
+  mount: { "/v1": [...controllers] },
   middlewares: [
-    "cors",
     "cookie-parser",
     "compression",
     "method-override",
@@ -33,4 +33,8 @@ export class Server {
 
   @Configuration()
   protected settings: Configuration;
+
+  $beforeRoutesInit() {
+    this.app.use(cors({ origin: "*" }));
+  }
 }

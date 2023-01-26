@@ -1,0 +1,16 @@
+{
+    "access_token": {
+      "iss": "https://0.0.0.0:8083",
+      "sub": "1234567890qwertyuio",
+      "jti": "mnb23vcsrt756yuiomnbvcx98ertyuiop",
+      "exp": 1735689600
+    },
+    "refresh_token": {
+      "aud": "https://your.krakend.io",
+      "iss": "https://your-backend",
+      "sub": "1234567890qwertyuio",
+      "jti": "mnb23vcsrt756yuiomn12876bvcx98ertyuiop",
+      "exp": 1735689600
+    },
+    "exp": 1735689600
+  }

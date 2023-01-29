@@ -9,7 +9,7 @@ import { controllers } from "./controllers/v1/index";
 @Configuration({
   ...config,
   acceptMimes: ["application/json"],
-  httpPort: process.env.PORT || 8083,
+  httpPort: process.env.PORT || 3000,
   httpsPort: false, // CHANGE
   componentsScan: false,
   mount: {

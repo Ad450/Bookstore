@@ -1,0 +1,10 @@
+version: '3.9'
+services:
+  gateway:
+    image: nginx-v2
+    ports:
+      - "8080:80"
+  bookService:
+    image: book-v1
+    ports: 
+      - "3000:8000"

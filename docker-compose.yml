@@ -1,10 +1,14 @@
 version: '3.9'
 services:
   gateway:
-    image: nginx-v2
+    build: 
+      context: . 
+      dockerfile: ./gateway/Dockerfile
     ports:
       - "8080:80"
-  bookService:
-    image: book-v1
+  bookservice:
+    build: 
+      context: . 
+      dockerfile: ./bookservice/Dockerfile
     ports: 
-      - "3000:8000"
+      - "8000:8083"

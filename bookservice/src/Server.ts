@@ -8,7 +8,7 @@ import cors from "cors";
 
 @Configuration({
   acceptMimes: ["application/json"],
-  httpPort: process.env.PORT || 3000,
+  httpPort: process.env.PORT || 8083,
   httpsPort: false, // CHANGE
   componentsScan: false,
   mount: { "/v1": [...controllers] },

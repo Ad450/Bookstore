@@ -1,6 +1,5 @@
 FROM node:16-alpine
-WORKDIR /
-COPY . .
+COPY ./bookservice/ .
 RUN yarn install
 
 CMD [ "yarn", "start" ]

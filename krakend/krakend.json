@@ -11,6 +11,14 @@
         "endpoint": "/v1/books",
         "method": "GET",
         "output_encoding": "json",
+
+        "extra_config": {
+          "auth/validator": {
+              "alg": "RS256",
+              "jwk_url": "./jwk.json",
+              "cache": true
+          }
+      },
         "backend": [
           {
             "url_pattern": "/v1/books",

@@ -5,7 +5,7 @@ import { Get } from "@tsed/schema";
 export class BookController {
   @Get("/")
   get() {
-    return "hello books";
+    return { data: "hello books" };
   }
 
   @Get("/all-books")

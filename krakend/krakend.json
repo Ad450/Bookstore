@@ -15,7 +15,7 @@
         "extra_config": {
           "auth/validator": {
               "alg": "RS256",
-              "jwk_url": "./jwk.json",
+              "jwk_url": "https://github.com/Ad450/Bookstore/blob/main/krakend/jwk.json",
               "cache": true
           }
       },
@@ -29,6 +29,30 @@
             ]
           }
         ]
+      },
+      {
+        "endpoint": "/v1/login",
+        "method": "POST",
+        "output_encoding": "json",
+        "extra_config": {
+          "auth/signer": {
+              "alg": "RS256",
+              "jwk_url": "https://github.com/Ad450/Bookstore/blob/main/krakend/jwk.json",
+              "kid": "secret",
+              "keys_to_sign": ["access_token"]
+          }
+      },
+        "backend": [
+          {
+            "url_pattern": "/v1/login",
+            "encoding": "json",
+            "method": "POST",
+            "host": [
+              "http://host.docker.internal:8000"
+            ]
+          }
+        ]
       }
+      
     ]
   }

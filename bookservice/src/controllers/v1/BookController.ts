@@ -3,7 +3,7 @@ import { Get, Post } from "@tsed/schema";
 
 @Controller("/")
 export class BookController {
-  @Get("/")
+  @Get("/books")
   get() {
     return { data: "hello books" };
   }
@@ -21,16 +21,17 @@ export class BookController {
         iss: "bookstore",
         sub: "1234567890qwertyuio",
         jti: "mnb23vcsrt756yuiomnbvcx98ertyuiop",
-        exp: 1735689600,
+        roles: ["user", "admin"],
+        exp: 173568960000,
       },
       refresh_token: {
         aud: "https://your.krakend.io",
         iss: "https://your-backend",
         sub: "1234567890qwertyuio",
         jti: "mnb23vcsrt756yuiomn12876bvcx98ertyuiop",
-        exp: 1735689600,
+        exp: 173568960000,
       },
-      exp: 1735689600,
+      exp: 173568960000,
     };
   }
 }

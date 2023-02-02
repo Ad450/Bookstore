@@ -14,9 +14,13 @@
 
         "extra_config": {
           "auth/validator": {
-              "alg": "RS256",
-              "jwk_url": "https://github.com/Ad450/Bookstore/blob/main/krakend/jwk.json",
-              "cache": true
+              "alg": "HS256",
+              "jwk_local_path": "./jwk.json",
+              "disable_jwk_security": true,
+              "cache": false,
+              "roles_key": "roles",
+              "roles": ["user", "admin"],
+              "operation_debug": true
           }
       },
         "backend": [
@@ -36,10 +40,12 @@
         "output_encoding": "json",
         "extra_config": {
           "auth/signer": {
-              "alg": "RS256",
-              "jwk_url": "https://github.com/Ad450/Bookstore/blob/main/krakend/jwk.json",
-              "kid": "secret",
-              "keys_to_sign": ["access_token"]
+              "alg": "HS256",
+              "kid": "sim2",
+              "keys_to_sign": ["access_token", "refresh_token"],
+              "jwk_local_path": "./jwk.json",
+              "disable_jwk_security": true
+           
           }
       },
         "backend": [
